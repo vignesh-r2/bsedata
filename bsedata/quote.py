@@ -40,7 +40,9 @@ def quote(scripCode):
     c = res.content
     soup = bs(c, "lxml")
 
-    res = {}
+    res = {
+        'priceBand': ''
+    }
 
     for span in soup('span'):
         updt_date = soup.find("span", id="strongDate").text.split('-')[1].strip()
